@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.use("/", express.static(path.join(__dirname, "dist")))
+// app.use("/", express.static(path.join(__dirname, "dist")))
 app.use("/api/users", userRoutes)
 app.use("/api/products", productRoutes)
 app.use("/api/carts", cartRoutes)
