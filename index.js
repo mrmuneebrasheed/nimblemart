@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 const path = require("path")
+const cors = require("cors")
 const userRoutes = require("./routes/user")
 const cartRoutes = require("./routes/cart")
 const orderRoutes = require("./routes/order")
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
 })
 
 // Routes
-// app.use("/", express.static(path.join(__dirname, "dist")))
+app.use(cors())
 app.use("/api/users", userRoutes)
 app.use("/api/products", productRoutes)
 app.use("/api/carts", cartRoutes)
